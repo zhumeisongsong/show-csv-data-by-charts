@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/show-csv-data-by-charts/static/css/main.dcca17ee.css",
+    "main.js": "/show-csv-data-by-charts/static/js/main.cd316235.js",
+    "static/js/787.36f55aea.chunk.js": "/show-csv-data-by-charts/static/js/787.36f55aea.chunk.js",
+    "index.html": "/show-csv-data-by-charts/index.html",
+    "main.dcca17ee.css.map": "/show-csv-data-by-charts/static/css/main.dcca17ee.css.map",
+    "main.cd316235.js.map": "/show-csv-data-by-charts/static/js/main.cd316235.js.map",
+    "787.36f55aea.chunk.js.map": "/show-csv-data-by-charts/static/js/787.36f55aea.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dcca17ee.css",
+    "static/js/main.cd316235.js"
+  ]
+}
