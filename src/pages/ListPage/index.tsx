@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { List, Typography, Space, Layout } from "antd";
 import CSVReader from "react-csv-reader";
@@ -39,8 +39,8 @@ const ListPage = () => {
             bordered
             dataSource={averageData.map((data: AverageDataItem) => ({
               name: data.name,
-              rankingLink: `/job-categories-ranking/${data.id}`,
-              detailLink: `/job-categories/${data.id}`
+              rankingLink: `/#/job-categories-ranking/${data.id}`,
+              detailLink: `/#/job-categories/${data.id}`
             }))}
             renderItem={(item) => (
               <List.Item>
