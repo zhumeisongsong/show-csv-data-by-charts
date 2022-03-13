@@ -67,7 +67,7 @@ const ScoreDetailPage: VFC = () => {
                       width: 1800 / detailData[Number(id)]?.data.length
                     }}
                   >
-                    {+categoryAverageData[key].score.toFixed(0)}
+                    {+categoryAverageData[key].score.toFixed(2)}
                   </Text>
                 );
               } else {
