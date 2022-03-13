@@ -24,6 +24,9 @@ const ScoreDetailPage: VFC = () => {
       data: [],
       xField: "name",
       yField: "score",
+      // label: {
+      //   position: "middle"
+      // },
       color: ({ type }) => {
         if (type === "10-30分" || type === "30+分") {
           return "#d5d5d5";
@@ -92,7 +95,7 @@ const ScoreDetailPage: VFC = () => {
                     {
                       +(
                         detailItem.score -
-                        +categoryAverageData[key].score.toFixed(0)
+                        +categoryAverageData[key].score.toFixed(2)
                       ).toFixed(2)
                     }
                   </Text>
@@ -111,12 +114,22 @@ const ScoreDetailPage: VFC = () => {
                 .filter(({ type }) => type === "cat")
                 .map(({ name, score }) => ({
                   name,
-                  score: +score.toFixed(2),
+                  score: +score.toFixed(8),
                   difference: 0
                 }))}
             />
           )}
         </ChartContainer>
+        <ul>
+          {detailData[Number(id)]?.data
+            .filter(({ type }) => type === "cat")
+            .map(({ name, score }) => (
+              <li>
+                {name}: <br />
+                {+score.toFixed(8)}
+              </li>
+            ))}
+        </ul>
       </PageContent>
     ),
     [detailData, categoryAverageData, id]
