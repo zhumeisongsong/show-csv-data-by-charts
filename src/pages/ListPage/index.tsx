@@ -39,8 +39,8 @@ const ListPage = () => {
             bordered
             dataSource={averageData.map((data: AverageDataItem) => ({
               name: data.name,
-              rankingLink: `/#/job-categories-ranking/${data.id}`,
-              detailLink: `/#/job-categories/${data.id}`
+              rankingLink: `#/job-categories-ranking/${data.id}`,
+              detailLink: `#/job-categories/${data.id}`
             }))}
             renderItem={(item) => (
               <List.Item>
