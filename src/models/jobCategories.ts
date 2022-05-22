@@ -112,18 +112,16 @@ export const jobCategories = createModel<RootModel>()({
         }
       });
 
-      console.log(detailData);
-
-      Object.keys(detailData).map((key: string) => {
-        averageData.push({
-          id: detailData[Number(key)].id,
-          name: detailData[Number(key)].name,
-          score:
-            detailData[Number(key)].data.find((item) => item.type === "eng")
-              ?.score || 0
-        });
-
-        return null;
+      Object.keys(payload).map((key: string) => {
+        if (payload[Number(key)].item_layer === "eng") {
+          return averageData.push({
+            id: payload[Number(key)].job_category_id,
+            name: payload[Number(key)].job_category_name,
+            score: payload[Number(key)].score_100
+          });
+        } else {
+          return null;
+        }
       });
 
       Object.keys(categoryAverageData).map((key: string) => {
