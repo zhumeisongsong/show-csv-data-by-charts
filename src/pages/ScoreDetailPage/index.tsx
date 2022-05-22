@@ -43,8 +43,6 @@ const ScoreDetailPage: VFC = () => {
     []
   );
 
-  console.log(categoryAverageData);
-
   return useMemo(
     () => (
       <PageContent>
@@ -64,8 +62,9 @@ const ScoreDetailPage: VFC = () => {
                 return (
                   <Text
                     style={{
-                      width: 1800 / detailData[Number(id)]?.data.length
+                      width: 1200 / detailData[Number(id)]?.data.length
                     }}
+                    key={key}
                   >
                     {+categoryAverageData[key].score.toFixed(2)}
                   </Text>
@@ -89,8 +88,9 @@ const ScoreDetailPage: VFC = () => {
                 return (
                   <Text
                     style={{
-                      width: 1800 / detailData[Number(id)]?.data.length
+                      width: 1200 / detailData[Number(id)]?.data.length
                     }}
+                    key={key}
                   >
                     {
                       +(
@@ -111,7 +111,6 @@ const ScoreDetailPage: VFC = () => {
             <Column
               {...config}
               data={detailData[Number(id)]?.data
-                .filter(({ type }) => type === "cat")
                 .map(({ name, score }) => ({
                   name,
                   score: +score.toFixed(8),
@@ -122,9 +121,8 @@ const ScoreDetailPage: VFC = () => {
         </ChartContainer>
         <ul>
           {detailData[Number(id)]?.data
-            .filter(({ type }) => type === "cat")
-            .map(({ name, score }) => (
-              <li>
+            .map(({ name, score }, index) => (
+              <li key={index}>
                 {name}: <br />
                 {+score.toFixed(8)}
               </li>
@@ -132,7 +130,7 @@ const ScoreDetailPage: VFC = () => {
         </ul>
       </PageContent>
     ),
-    [detailData, categoryAverageData, id]
+    [detailData, categoryAverageData, id, config]
   );
 };
 
