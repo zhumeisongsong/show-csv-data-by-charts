@@ -123,7 +123,7 @@ const ScoreDetailPage: VFC = () => {
           {detailData[Number(id)]?.data
             .map(({ name, score }, index) => (
               <li key={index}>
-                {name}: <br />
+                {/* {name}: <br /> */}
                 {+score.toFixed(8)}
               </li>
             ))}
